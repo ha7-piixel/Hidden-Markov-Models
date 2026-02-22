@@ -1,23 +1,51 @@
-# HMM Implementation: Baum-Welch Algorithm
+# 📊 Hidden Markov Model (HMM) Visualizer
 
-### Student Information
-- **Name:** Harikrishnan M
-- **University Registration Number:** TCR24CS032
+**Student Name:** Harikrishnan M 
+**Registration Number:** TCR24CS032
+**Project:** Baum-Welch Algorithm Implementation & Visualization
 
-### Project Overview
-This repository contains a Python implementation of the Baum-Welch algorithm for Hidden Markov Models (HMM). It includes a visual web-application built with Streamlit.
+---
 
-### How to Setup
-1. Open this folder in VS Code.
-2. Install dependencies: `pip install -r requirements.txt`
-3. Launch the app: `streamlit run app.py`
+## 📝 Project Overview
+This repository contains a full implementation of the **Baum-Welch Algorithm** (Expectation-Maximization) used to find the unknown parameters of a Hidden Markov Model (HMM). 
 
-### Technical Details
-- **Logic:** `baum_welch.py` (Forward-Backward & Parameter re-estimation)
-- **UI:** `app.py` (Streamlit Dashboard)
+The application is built with a Python backend and a **Streamlit** frontend, allowing for real-time training and professional-grade visualization of state transitions.
 
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+### ✨ Key Features
+* **Core Math:** Implementation of Forward-Backward and Baum-Welch algorithms from scratch.
+* **Interactive UI:** Dynamic input for observation sequences and initial probability matrices.
+* **High-End Visualization:** Uses D3.js-based rendering for clear, non-overlapping state diagrams.
 
-## Credits
-The visualization for the state transition diagrams is powered by the [State-Transition-Diagrams](https://github.com/gabsgj/State-Transition-Diagrams) library by gabsj.
+---
+
+## 🔬 The Mathematics (Baum-Welch)
+The algorithm iteratively optimizes the model parameters $\theta = (A, B, \pi)$ to maximize the likelihood $P(O|\theta)$.
+
+### 1. Expectation (E-Step)
+We calculate the forward ($\alpha$) and backward ($\beta$) variables:
+$$\alpha_t(i) = P(O_1, O_2, \dots, O_t, q_t = S_i | \lambda)$$
+$$\beta_t(i) = P(O_{t+1}, O_{t+2}, \dots, O_T | q_t = S_i, \lambda)$$
+
+### 2. Maximization (M-Step)
+We update the transition matrix $A$ and emission matrix $B$ using the calculated $\xi_t(i,j)$ and $\gamma_t(i)$ values to converge on the optimal model.
+
+---
+
+## 🛠️ Tech Stack & Requirements
+| Library | Description |
+| :--- | :--- |
+| **Streamlit** | Interactive web interface |
+| **NumPy** | Matrix operations and numerical computing |
+| **State-Transition-Diagrams** | Advanced D3.js/Graphviz rendering |
+| **Flask** | Dependency for visualization assets |
+
+> [!NOTE]
+> Make sure you have **Graphviz** installed on your system path for the diagrams to render correctly.
+
+---
+
+## 🚀 How to Run
+1. **Clone the repo:**
+   ```bash
+   git clone [https://github.com/ha7-piixel/Hidden-Markov-Models.git](https://github.com/ha7-piixel/Hidden-Markov-Models.git)
+   cd Hidden-Markov-Models
