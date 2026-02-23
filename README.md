@@ -26,8 +26,10 @@ This project implements the **Baum-Welch Algorithm** from scratch to estimate th
 ---
 
 ## 🛠️ Installation & Usage
-
-### 1. Clone the Repository
 ```bash
 git clone [https://github.com/ha7-piixel/Hidden-Markov-Models.git](https://github.com/ha7-piixel/Hidden-Markov-Models.git)
 cd Hidden-Markov-Models
+
+pip install -r requirements.txt
+
+streamlit run app.py
